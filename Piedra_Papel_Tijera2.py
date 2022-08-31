@@ -19,9 +19,8 @@ def juego():
     elige_usuario = usuario(opcion)
     elige_pc = pc(aleatorio)
 
-    if elige_usuario == 'Error':
-        print ('Numero Invalido')
-    elif elige_usuario == elige_pc:
+    
+    if elige_usuario == elige_pc:
             print('')
             print('Elegiste: ', elige_usuario)
             print('PC eligió: ', elige_pc)
@@ -59,6 +58,9 @@ def juego():
                 print('Elegiste: ', elige_usuario)
                 print('PC eligió: ', elige_pc)
                 print('Ganaste')
+    if elige_usuario >= 4:
+        print ('Adios')
+
     
 
 def usuario(x: str):
@@ -68,11 +70,10 @@ def usuario(x: str):
         return 'Papel'
     elif x == 3:
         return 'Tijera'
-    elif x == 4:
-        bandera = False
-        return ''
-    else:
-        return 'Error'
+    elif x >= 4:
+        print('Nos vemos')
+    
+    
 
 def pc (x: str):
     if x == 0:
